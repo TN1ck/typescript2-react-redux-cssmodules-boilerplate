@@ -1,0 +1,36 @@
+node_modules
+
+# Logs
+logs
+*.log
+.DS_Store
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# node-waf configuration
+.lock-wscript
+
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+build/Release
+
+# Dependency directory
+node_modules
+
+# Build directory
+dist
+
+# Editor temporary files
+*~
+\#*#
+.#*
+*.orig
+*.rej
+.awcache
+
+# Typescript-related generated files
+typings
+src/**/*.js
+src/**/*.js.map
