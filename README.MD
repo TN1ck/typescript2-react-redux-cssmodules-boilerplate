@@ -15,5 +15,6 @@ This does not use Webpack 2 yet, as there are no docs available and I had not fi
 ## Usage
 
 1. `npm install` or `yarn install`
-2. `npm start` for developing. The server runs at [http://localhost:8080](http://localhost:8080)
-3. `npm run-script build` for a production build
+2. `typings install` to install the needed typings.
+3. `npm start` for developing. The server runs at [http://localhost:8080](http://localhost:8080)
+4. `npm run-script build` for a production build
