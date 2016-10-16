@@ -1,4 +1,7 @@
-/* this is not a scss file though */
+/*
+    This file exports the classes into the global namespace,
+    exactly like you normally use css.
+*/
 
 @import './lib/basscss';
 @import './colors';

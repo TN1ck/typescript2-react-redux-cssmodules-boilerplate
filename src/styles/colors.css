@@ -1,5 +1,15 @@
 @import './variables.css';
 
+/*
+    This is one of the biggest problems currently with postCSS.
+    Without using something like scss as another processer,
+    there is not a reliable way to iterate through an array and use
+    the variables as names.
+    The problems arise when using hashes for the postCSS-classes, as
+    we are doing here.
+    (There are some iterating extensions available, I tried them.).
+*/
+
 /* TEXT COLORS */
 
 .color-white {

@@ -3,7 +3,7 @@ const CSSModules = require('react-css-modules');
 const styles = require('./styles.css');
 import { Link } from 'react-router';
 
-export function _Item (props) {
+function _Item (props) {
     return (
         <Link
             activeStyle={{color: 'black', fontWeight: 'bold'}}
