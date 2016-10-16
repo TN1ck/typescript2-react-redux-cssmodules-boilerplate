@@ -117,8 +117,6 @@ const plugins = basePlugins
 // POSTCSS
 //
 
-'use strict';
-
 const postcssBasePlugins = [
     require('postcss-modules-local-by-default'),
     require('postcss-import')({
