@@ -1,3 +1,4 @@
+/// <reference path="../node_modules/@types/node/index.d.ts" />
 require('whatwg-fetch');
 import 'babel-polyfill';
 const { AppContainer } = require('react-hot-loader');

@@ -1,5 +1,5 @@
 import * as React from 'react';
-const CSSModules = require('react-css-modules');
+import * as CSSModules from 'react-css-modules';
 const styles = require('./styles.css');
 import { Link } from 'react-router';
 
@@ -7,7 +7,7 @@ function _Item (props) {
     return (
         <Link
             activeStyle={{color: 'black', fontWeight: 'bold'}}
-            className={styles['navigation-item']}
+            styleName='navigation-item'
             to={props.to}
         >
             {props.children}
