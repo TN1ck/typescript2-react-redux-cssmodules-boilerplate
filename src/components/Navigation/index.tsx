@@ -1,13 +1,14 @@
 import * as React from 'react';
-const CSSModules = require('react-css-modules');
-const styles = require('./styles.css');
+import * as CSSModules from 'react-css-modules';
 import { Link } from 'react-router';
+
+const styles = require('./styles.css');
 
 function _Item (props) {
     return (
         <Link
             activeStyle={{color: 'black', fontWeight: 'bold'}}
-            className={styles['navigation-item']}
+            styleName='navigation-item'
             to={props.to}
         >
             {props.children}
@@ -17,6 +18,10 @@ function _Item (props) {
 
 function _Wrapper (props) {
     return (
+        /**
+         * The alternative way to do this is, without react-css-modules is:
+         * className={styles['navigation-wrapper']}
+         */
         <div styleName='navigation-wrapper'>
             {props.children}
         </div>

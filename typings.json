@@ -3,6 +3,7 @@
     "classnames": "registry:dt/classnames#0.0.0+20160316155526",
     "node": "registry:dt/node#6.0.0+20161014191813",
     "react": "registry:dt/react#0.14.0+20160801203155",
+    "react-css-modules": "registry:dt/react-css-modules#3.7.9+20160805170511",
     "react-dom": "registry:dt/react-dom#0.14.0+20160412154040",
     "react-redux": "registry:dt/react-redux#4.4.0+20160908183346",
     "redux": "registry:dt/redux#3.5.2+20160703092728",

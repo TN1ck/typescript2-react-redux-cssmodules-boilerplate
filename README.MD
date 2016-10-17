@@ -12,6 +12,12 @@ Or else it would be really annoying to do stuff like `* { box-sizing: border-box
 
 This does not use Webpack 2 yet, as there are no docs available and I had not fixable issues with it when trying to upgrade.
 
+## @types
+
+With TypeScript 2.0 all types will be available via npm through the `@types` organisation. TypeScript 2.0
+will automatically pick up those and use them.
+I tried this out in the `@types`-branch, there is currently one issue with `react-css-modules`.
+
 ## Usage
 
 1. `npm install` or `yarn install`
