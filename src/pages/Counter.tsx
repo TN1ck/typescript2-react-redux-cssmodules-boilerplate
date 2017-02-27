@@ -16,7 +16,7 @@ const Counter: React.StatelessComponent<{
             <Grid.Container>
                 <Grid.Row>
                     <Grid.Col xs={12}>
-                        <h1>{'Counter'}</h1>
+                        <h1>{'Redux Counter'}</h1>
                         <p>
                             {`
                                 We already counted ${props.counter.counts}

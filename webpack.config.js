@@ -3,8 +3,10 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const SplitByPathPlugin = require('webpack-split-by-path');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const { CheckerPlugin } = require('awesome-typescript-loader')
 
 const IS_PRODUCTION = process.env.NODE_ENV === 'production';
 
@@ -57,15 +59,22 @@ loaders.tsx = {
         loader: 'awesome-typescript-loader',
         options: {
             useBabel: true,
-            useCache: true
+            useCache: true,
+            babelOptions: {
+                presets: [
+                    [
+                        'es2015', {
+                            modules: false
+                        }
+                    ]
+                ],
+                compact: true,
+                plugins: ["react-hot-loader/babel"],
+                retainLines: true
+            }
+
         }
     }],
-    exclude: /node_modules/
-};
-
-loaders.html = {
-    test: /\.html$/,
-    use: ['raw-loader'],
     exclude: /node_modules/
 };
 
@@ -117,7 +126,7 @@ loaders.globalcss = {
     exclude: /node_modules/
 };
 
-exports.ttfeot = {
+loaders.ttfeot = {
     test: /\.(ttf|eot)$/i,
     use: [{
         loader: 'file-loader',
@@ -129,7 +138,7 @@ exports.ttfeot = {
     }]
 };
 
-exports.woff = {
+loaders.woff = {
     test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
     use: [{
         loader: 'url-loader',
@@ -141,7 +150,7 @@ exports.woff = {
     }]
 };
 
-exports.image = {
+loaders.image = {
     test: /\.(jpe?g|png|gif)$/i,
     use: [{
         loader: 'file-loader',
@@ -189,11 +198,16 @@ const devPlugins = [
         files: ['src/styles/*.css'],
         failOnError: false
     }),
+    // new CheckerPlugin(),
     new webpack.HotModuleReplacementPlugin()
 ];
 
 const prodPlugins = [
-    // new ExtractTextPlugin('style.css', { allChunks: true })
+     new webpack.LoaderOptionsPlugin({
+        minimize: true,
+        debug: false
+    }),
+    new UglifyJSPlugin()
 ];
 
 const plugins = basePlugins
@@ -232,8 +246,6 @@ module.exports = {
             'node_modules'
         ],
         extensions: [
-            '.webpack.js',
-            '.web.js',
             '.tsx',
             '.ts',
             '.js',
@@ -250,18 +262,11 @@ module.exports = {
     module: {
         rules: [
             loaders.tsx,
-            // loaders.html,
-            // loaders.image,
+            loaders.image,
             loaders.globalcss,
             loaders.css,
-            // loaders.ttfeot,
-            // loaders.woff
+            loaders.ttfeot,
+            loaders.woff
         ]
-    },
-
-    externals: {
-        'react/lib/ReactContext': 'window',
-        'react/lib/ExecutionEnvironment': true,
-        'react/addons': true
     }
 };

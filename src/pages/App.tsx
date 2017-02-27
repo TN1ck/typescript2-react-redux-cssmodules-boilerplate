@@ -10,7 +10,8 @@ const App: React.StatelessComponent<React.Props<{}>> = function (props) {
                 <Grid.Row>
                     <Navigation.Wrapper>
                         <Navigation.Item to={'/home'}>{'Home'}</Navigation.Item>
-                        <Navigation.Item to={'/counter'}>{'Counter'}</Navigation.Item>
+                        <Navigation.Item to={'/counter'}>{'Redux Counter'}</Navigation.Item>
+                        <Navigation.Item to={'/state-counter'}>{'State Counter'}</Navigation.Item>
                     </Navigation.Wrapper>
                 </Grid.Row>
             </Grid.Container>

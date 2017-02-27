@@ -80,5 +80,8 @@
     "webpack-hot-middleware": "^2.17.0",
     "webpack-split-by-path": "2.0.0",
     "whatwg-fetch": "^2.0.2"
+  },
+  "devDependencies": {
+    "uglifyjs-webpack-plugin": "^0.2.1"
   }
 }
