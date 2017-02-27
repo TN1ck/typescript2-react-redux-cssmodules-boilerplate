@@ -42,6 +42,13 @@ const postcssPlugins = postcssBasePlugins
 
 const loaders = {};
 
+loaders.tslint =  {
+    test: /\.(tsx?)$/,
+    enforce: 'pre',
+    loader: 'tslint-loader',
+    options: { /* Loader options go here */ }
+}
+
 loaders.js = {
     test: /\.(jsx?)$/,
     use: [{
@@ -195,9 +202,10 @@ const basePlugins = [
 const devPlugins = [
     new StyleLintPlugin({
         configFile: './.stylelintrc',
-        files: ['src/styles/*.css'],
+        files: ['src/**/*.css'],
         failOnError: false
     }),
+    // caused some problems with the typechecking
     // new CheckerPlugin(),
     new webpack.HotModuleReplacementPlugin()
 ];
@@ -262,6 +270,7 @@ module.exports = {
     module: {
         rules: [
             loaders.tsx,
+            loaders.tslint,
             loaders.image,
             loaders.globalcss,
             loaders.css,
