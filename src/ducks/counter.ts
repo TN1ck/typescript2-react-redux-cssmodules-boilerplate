@@ -1,7 +1,7 @@
 const COUNT_UP = 'counter/COUNT_UP';
 const COUNT_DOWN = 'counter/COUNT_DOWN';
 
-interface ICounterMessage {
+interface CounterMessage {
     type: string;
 };
 
@@ -17,17 +17,17 @@ export function countDown () {
     };
 }
 
-export interface ICounterState {
+export interface CounterState {
     counter: number;
     counts: number;
 };
 
-const INITIAL_STATE: ICounterState = {
+const INITIAL_STATE: CounterState = {
     counter: 0,
     counts: 0
 };
 
-export default function counterReducer (state: ICounterState = INITIAL_STATE, action: ICounterMessage) {
+export default function counterReducer (state: CounterState = INITIAL_STATE, action: CounterMessage) {
     switch (action.type) {
         case COUNT_UP:
             return {

@@ -1,6 +1,6 @@
-import * as React from 'react';
+import * as React      from 'react';
 
-import * as Grid from 'src/components/Grid';
+import * as Grid       from 'src/components/Grid';
 import * as Navigation from 'src/components/Navigation';
 
 const App: React.StatelessComponent<React.Props<{}>> = function (props) {

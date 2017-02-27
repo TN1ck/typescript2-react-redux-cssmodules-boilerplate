@@ -1,16 +1,16 @@
 import 'whatwg-fetch';
 import 'babel-polyfill';
 
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import Root from './Root';
-import { AppContainer } from 'react-hot-loader';
+import * as React        from 'react';
+import * as ReactDOM     from 'react-dom';
+import Root              from './Root';
+import { AppContainer }  from 'react-hot-loader';
 import {
     createStore, applyMiddleware, compose
-}                                      from 'redux';
-import thunkMiddleWare                 from 'redux-thunk';
-import rootReducer                     from 'src/ducks';
-import * as createLogger               from 'redux-logger';
+}                        from 'redux';
+import thunkMiddleWare   from 'redux-thunk';
+import rootReducer       from 'src/ducks';
+import * as createLogger from 'redux-logger';
 
 //
 // STORE

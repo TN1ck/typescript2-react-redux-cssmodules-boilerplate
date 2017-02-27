@@ -17,10 +17,6 @@ export function Item (props) {
 
 export function Wrapper (props) {
     return (
-        /**
-         * The alternative way to do this is, without react-css-modules is:
-         * className={styles['navigation-wrapper']}
-         */
         <div className={styles.navigationWrapper}>
             {props.children}
         </div>

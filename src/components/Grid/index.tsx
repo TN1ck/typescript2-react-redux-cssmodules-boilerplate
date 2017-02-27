@@ -20,7 +20,7 @@ export const Col: React.StatelessComponent<React.Props<{}> & {
     );
 };
 
-export const Row: React.StatelessComponent<React.Props<any>> = function _Row (props) {
+export const Row: React.StatelessComponent<React.Props<{}>> = function _Row (props) {
     return (
         <div className='clearfix mxn2'>
             {props.children}
@@ -28,7 +28,7 @@ export const Row: React.StatelessComponent<React.Props<any>> = function _Row (pr
     );
 };
 
-export const Container: React.StatelessComponent<React.Props<any> & {
+export const Container: React.StatelessComponent<React.Props<{}> & {
     fluid?: boolean
 }> = function _Container (props) {
     const classes = classNames('clearfix', 'mx-auto', {

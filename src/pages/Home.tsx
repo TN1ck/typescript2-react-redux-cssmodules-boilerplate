@@ -1,6 +1,5 @@
 import * as React from 'react';
-
-import * as Grid from 'src/components/Grid';
+import * as Grid  from 'src/components/Grid';
 
 const Home: React.StatelessComponent<{}> = function () {
     return (

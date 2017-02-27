@@ -1,13 +1,13 @@
-import * as React from 'react';
+import * as React                         from 'react';
 
-import {connect} from 'react-redux';
-import {countUp, countDown, ICounterState} from 'src/ducks/counter';
+import {connect}                          from 'react-redux';
+import {countUp, countDown, CounterState} from 'src/ducks/counter';
 
-import * as Grid from 'src/components/Grid';
+import * as Grid                          from 'src/components/Grid';
 
 const Counter: React.StatelessComponent<{
     currentlySelected: string,
-    counter: ICounterState,
+    counter: CounterState,
     countUp: () => any,
     countDown: () => any
 }> = function _Counter (props) {
@@ -35,7 +35,7 @@ const Counter: React.StatelessComponent<{
 export default connect(
     function (state) {
         return {
-            counter: (state.counter as ICounterState)
+            counter: (state.counter as CounterState)
         };
     },
     function (dispatch) {

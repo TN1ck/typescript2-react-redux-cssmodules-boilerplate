@@ -1,7 +1,10 @@
 import * as React from 'react';
-import * as Grid from 'src/components/Grid';
+import * as Grid  from 'src/components/Grid';
 
-class StateCounter extends React.Component<{}, {counter, counts}> {
+class StateCounter extends React.Component<{}, {
+    counter: number,
+    counts: number
+}> {
     constructor (props) {
         super(props);
         this.state = {
