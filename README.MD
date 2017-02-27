@@ -1,6 +1,13 @@
 # TypeScript 2.1 + React + Redux + Hot Reloading + CSS Modules Boilerplate + Webpack 2 + @Types
 
-This is a simple boilerplate which aims to combine TypeScript 2.0 with React, Redux and CSS Modules. Hot Reloading is working as well.
+This is a simple boilerplate which aims to combine TypeScript 2.1 with React, Redux and CSS Modules.
+Hot Reloading is working as well.
+The repo was recently updated and changed:
+
+* Uses Webpack 2 Instead of Webpack 1
+* Uses `@types` instead of typings
+* Typed CSS (check out /src/components/Navigation/index.tsx), it's really cool!
+* Updated all the packages
 
 ## Gotchas and Weirdness
 
