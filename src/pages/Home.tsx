@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import * as Grid from 'src/components/Grid';
 
-const Home: React.StatelessComponent<{}> = function (props) {
+const Home: React.StatelessComponent<{}> = function () {
     return (
         <div>
             <Grid.Container>

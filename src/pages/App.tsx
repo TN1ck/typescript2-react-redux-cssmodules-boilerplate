@@ -3,9 +3,7 @@ import * as React from 'react';
 import * as Grid from 'src/components/Grid';
 import * as Navigation from 'src/components/Navigation';
 
-interface IAppProps extends React.Props<any> {};
-
-const App: React.StatelessComponent<IAppProps> = function (props) {
+const App: React.StatelessComponent<React.Props<{}>> = function (props) {
     return (
         <div>
             <Grid.Container>

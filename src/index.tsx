@@ -1,6 +1,6 @@
-require('whatwg-fetch');
+import 'whatwg-fetch';
 import 'babel-polyfill';
-const { AppContainer } = require('react-hot-loader');
+import { AppContainer } from 'react-hot-loader';
 
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
@@ -22,8 +22,8 @@ function renderApp (RootComponent) {
 
 renderApp(Root);
 
-if ((module as any).hot) {
-    (module as any).hot.accept(
+if (module.hot) {
+    module.hot.accept(
         './Root.tsx',
         () => renderApp(require('./Root.tsx').default)
     );

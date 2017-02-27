@@ -34,3 +34,4 @@ dist
 typings
 src/**/*.js
 src/**/*.js.map
+src/**/*.css.d.ts

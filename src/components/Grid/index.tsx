@@ -1,12 +1,11 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-export const Col: React.StatelessComponent<{
+export const Col: React.StatelessComponent<React.Props<{}> & {
     xs?: number,
     sm?: number,
     md?: number,
-    lg?: number,
-    children?: React.ReactChild
+    lg?: number
 }> = function _Col (props) {
 
     const xsClass = props.xs ? 'col-' + props.xs : '';
@@ -21,9 +20,7 @@ export const Col: React.StatelessComponent<{
     );
 };
 
-export const Row: React.StatelessComponent<{
-    children?: React.ReactChild
-}> = function _Row (props) {
+export const Row: React.StatelessComponent<React.Props<any>> = function _Row (props) {
     return (
         <div className='clearfix mxn2'>
             {props.children}
@@ -31,8 +28,7 @@ export const Row: React.StatelessComponent<{
     );
 };
 
-export const Container: React.StatelessComponent<{
-    children?: React.ReactChild,
+export const Container: React.StatelessComponent<React.Props<any> & {
     fluid?: boolean
 }> = function _Container (props) {
     const classes = classNames('clearfix', 'mx-auto', {

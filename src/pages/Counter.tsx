@@ -8,8 +8,8 @@ import * as Grid from 'src/components/Grid';
 const Counter: React.StatelessComponent<{
     currentlySelected: string,
     counter: ICounterState,
-    countUp: () => void,
-    countDown: () => void
+    countUp: () => any,
+    countDown: () => any
 }> = function _Counter (props) {
     return (
         <div>

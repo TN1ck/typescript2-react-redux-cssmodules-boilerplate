@@ -16,9 +16,9 @@ const enhancer = compose(
 export default function configureStore (initialState) {
     const store = createStore(rootReducer, initialState, enhancer);
 
-    if ((module as any).hot) {
+    if (module.hot) {
         // Enable Webpack hot module replacement for reducers
-        (module as any).hot.accept('../ducks', () => {
+        module.hot.accept('../ducks', () => {
             const nextRootReducer = require('src/ducks');
             store.replaceReducer(nextRootReducer);
         });
