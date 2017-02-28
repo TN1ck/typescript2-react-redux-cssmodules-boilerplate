@@ -7,8 +7,8 @@
     "node": "6"
   },
   "scripts": {
-    "prebuild": "npm run clean",
-    "build": "export NODE_ENV=production && node build.js",
+    "prebuild": "npm run clean && export GENERATE_TYPINGS=TRUE && node build.js",
+    "build": "export GENERATE_TYPINGS=FALSE && NODE_ENV=production && node build.js",
     "clean": "rm -rf dist/",
     "start": "node server.js"
   },

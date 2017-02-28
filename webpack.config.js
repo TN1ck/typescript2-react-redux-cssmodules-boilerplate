@@ -9,6 +9,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const { CheckerPlugin } = require('awesome-typescript-loader')
 
 const IS_PRODUCTION = process.env.NODE_ENV === 'production';
+const GENERATE_TYPINGS = process.env.GENERATE_TYPINGS === 'TRUE';
 
 
 //
@@ -233,6 +234,61 @@ const applicationEntries = IS_PRODUCTION ? ['./src/index'] : [
     './src/index'
 ];
 
+// while typed css is pretty cool, Typescript has a problem when we generate them on the fly while we try to
+// the typed definitions.
+// Here we just generate the css (and with it the types) so in the real build task, they are already there
+// This is not perfect, but it works reliable
+if (GENERATE_TYPINGS) {
+    console.log('Generate Typings');
+    module.exports = {
+        entry: applicationEntries,
+
+        output: {
+            path: path.join(__dirname, 'dist'),
+            filename: '[name].[hash].js',
+            publicPath: '/',
+            sourceMapFilename: '[name].[hash].js.map',
+            chunkFilename: '[id].chunk.js'
+        },
+
+        devtool: 'eval',
+
+        resolve: {
+            modules: [
+                path.resolve('./'),
+                'node_modules',
+            ],
+            extensions: [
+                '.tsx',
+                '.ts',
+                '.js',
+                '.json',
+                '.css'
+            ]
+        },
+
+        plugins: plugins,
+
+        devServer: {
+            historyApiFallback: { index: '/' }
+        },
+
+        module: {
+            // we have to use all the loaders, because the javascript imports the css
+            rules: [
+                loaders.tsx,
+                loaders.tslint,
+                loaders.image,
+                loaders.globalcss,
+                loaders.css,
+                loaders.ttfeot,
+                loaders.woff
+            ]
+        }
+    };
+    return;
+}
+
 module.exports = {
     entry: applicationEntries,
 
@@ -257,7 +313,8 @@ module.exports = {
             '.tsx',
             '.ts',
             '.js',
-            '.json'
+            '.json',
+            '.css'
         ]
     },
 

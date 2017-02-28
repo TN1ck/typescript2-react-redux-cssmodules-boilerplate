@@ -22,6 +22,10 @@ This does use Webpack 2.0, so be aware if you want to use plugins that are not u
 Hot Reloading has still some problems which I couldn't solve (mostly with the stores), if someone has some pointers,
 I would be super grateful, I tried nearly everything.
 
+Because of the typed css, which is created automatically during the build, the build-process needs to run twice.
+This is far from optimal, but there is no better way currently. One could commit the created files, but this just creates
+noise. If someone has an idea, how to solve this, let me know!
+
 ## @types
 
 With TypeScript 2.0 all types will be available via npm through the `@types` organisation. TypeScript 2.0
